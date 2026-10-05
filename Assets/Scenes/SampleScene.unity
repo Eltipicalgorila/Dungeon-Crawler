@@ -869,8 +869,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25301027, y: -0.46818817, z: 0.14188604, w: 0.834658}
-  m_LocalPosition: {x: -29.257055, y: 129.97874, z: -404.60226}
+  m_LocalRotation: {x: -0.036903493, y: -0.05503872, z: -0.00038923282, w: 0.99780196}
+  m_LocalPosition: {x: -132.67, y: 5.65, z: -301.67072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3571,6 +3571,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1875561113}
   - component: {fileID: 1875561112}
+  - component: {fileID: 1875561115}
+  - component: {fileID: 1875561114}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -3598,7 +3600,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 9910924}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -3629,13 +3631,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875561111}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25301024, y: -0.46818814, z: 0.14188603, w: 0.83465797}
-  m_LocalPosition: {x: -33.236496, y: 130.0849, z: -400.33228}
+  m_LocalRotation: {x: -0.036903493, y: -0.05503872, z: -0.00038923282, w: 0.99780196}
+  m_LocalPosition: {x: -136.64944, y: 5.7561502, z: -297.40073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.226, y: -6.321, z: 0.189}
+--- !u!114 &1875561114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875561111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7362d5a2f8ea3347bfcc808a1e9290e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineAutoFocus
+  FocusTarget: 0
+  CustomTarget: {fileID: 0}
+  FocusDepthOffset: 0
+  Damping: 0.2
+--- !u!114 &1875561115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875561111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d1163fa822e8b418a0a603ec078d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLockToTarget
+  Damping: 0
 --- !u!43 &1954757316
 Mesh:
   m_ObjectHideFlags: 0
