@@ -3,28 +3,36 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    private CharacterController characterController;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float velocidad = 5f;
+
+    private CharacterController controller;
+    private Transform camara;
+
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        camara = Camera.main.transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Move();
-    }
-
-    private void Move()
-    {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 input = new Vector3(horizontal, 0, vertical);
-        input = Vector3.ClampMagnitude(input, 1.0f);
-        Vector3 targetVelocity = input * moveSpeed;
+        float vertical = Input.GetAxis("Vertical");
 
-        characterController.Move(targetVelocity *Time.deltaTime);
+        Vector3 adelante = camara.forward;
+        Vector3 derecha = camara.right;
+
+        adelante.y = 0f;
+        derecha.y = 0f;
+
+        adelante.Normalize();
+        derecha.Normalize();
+
+        Vector3 movimiento =
+            adelante * vertical + derecha * horizontal;
+
+        movimiento = Vector3.ClampMagnitude(movimiento, 1f);
+
+        controller.Move(movimiento * velocidad * Time.deltaTime);
     }
 }
